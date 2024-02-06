@@ -1,5 +1,6 @@
 package com.mustgo.controller;
 
+import com.mustgo.domain.Member;
 import com.mustgo.service.MemberService;
 import com.mustgo.service.PostService;
 import com.mustgo.service.RestaurantService;
