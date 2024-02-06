@@ -8,4 +8,6 @@ public class PostSearch {
     private String memberName;
 
     private String postTitle;
+
+    private Long restaurantId;
 }

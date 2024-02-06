@@ -19,12 +19,14 @@ public class PostRepository {
 
     public Post findOne(Long id) { return em.find(Post.class, id); }
 
+
+    /** !! 수정 필요 !!
     public List<Post> findAllByString(PostSearch PostSearch) {
         //language=JPAQL
         String jpql = "select o From Post o join o.member m";
         boolean isFirstCondition = true;
         //게시글 제목 검색
-        if (PostSearch.getPostTitle() != null) {
+        if (PostSearch.getRestaurantId() != null) {
             if (isFirstCondition) {
                 jpql += " where";
                 isFirstCondition = false;
@@ -43,6 +45,7 @@ public class PostRepository {
             }
             jpql += " m.name like :name";
         }
+
         TypedQuery<Post> query = em.createQuery(jpql, Post.class)
                 .setMaxResults(100); //최대 1000건
         if (PostSearch.getPostTitle() != null) {
@@ -53,5 +56,5 @@ public class PostRepository {
         }
         return query.getResultList();
     }
-
+*/
 }

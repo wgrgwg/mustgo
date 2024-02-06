@@ -1,5 +1,6 @@
 package com.mustgo.controller;
 
+import com.mustgo.domain.Address;
 import com.mustgo.domain.Member;
 import com.mustgo.domain.MemberRank;
 import com.mustgo.service.MemberService;
@@ -32,9 +33,12 @@ public class MemberController {
             return"members/createMemberForm";
         }
 
+        Address address = new Address(form.getCity(), form.getDistrict(), form.getStreet(), form.getZipcode());
+
         Member member = new Member();
         member.setName(form.getName());
         member.setRank(MemberRank.BRONZE);
+        member.setAddress(address);
 
         memberService.join(member);
         return"redirect:/";

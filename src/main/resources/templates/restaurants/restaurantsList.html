@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<body>
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
+    <div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>상호명</th>
+                <th>분류</th>
+                <th>도시</th>
+                <th>구</th>
+                <th>도로명</th>
+                <th>주소</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="restaurants : ${restaurants}">
+                <td th:text="${restaurants.id}"></td>
+                <td th:text="${restaurants.name}"></td>
+                <td th:text="${restaurants.category}"></td>
+                <td th:text="${restaurants.address?.city}"></td>
+                <td th:text="${restaurants.address?.district}"></td>
+                <td th:text="${restaurants.address?.street}"></td>
+                <td th:text="${restaurants.address?.zipcode}"></td>
+<!--                <td>-->
+<!--                    <a href="#" th:href="@{/restaurants/{id}/posts (id=${restaurants.id})}"-->
+<!--                       class="btn btn-primary" role="button">리뷰 조회</a>-->
+<!--                </td>-->
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:replace="fragments/footer :: footer"/>
+</div> <!-- /container -->
+</body>
+</html>

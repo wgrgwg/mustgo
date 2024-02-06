@@ -18,9 +18,10 @@ public class Member {
 
     private MemberRank rank;
 
+    private Address address;
+
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<Post> posts = new ArrayList<>();
-
 
 
     /**
