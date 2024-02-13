@@ -12,8 +12,7 @@
                 <th>이름</th>
                 <th>도시</th>
                 <th>구</th>
-                <th>도로명</th>
-                <th>우편번호</th>
+                <th>동</th>
             </tr>
             </thead>
             <tbody>
@@ -22,8 +21,7 @@
                 <td th:text="${member.name}"></td>
                 <td th:text="${member.address?.city}"></td>
                 <td th:text="${member.address?.district}"></td>
-                <td th:text="${member.address?.street}"></td>
-                <td th:text="${member.address?.zipcode}"></td>
+                <td th:text="${member.address?.dong}"></td>
             </tr>
             </tbody>
         </table>

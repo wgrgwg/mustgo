@@ -8,16 +8,14 @@ import lombok.Getter;
 public class Address {
     private String city;
     private String district;
-    private String street;
-    private String zipcode;
+    private String dong;
 
     protected Address(){
     }
 
-    public Address(String city, String district, String street, String zipcode) {
+    public Address(String city, String district, String dong) {
         this.city = city;
         this.district = district;
-        this.street = street;
-        this.zipcode = zipcode;
+        this.dong = dong;
     }
 }

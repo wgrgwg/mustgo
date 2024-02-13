@@ -37,4 +37,13 @@ public class RestaurantService { // 레포에 단순히 위임만하는 클래�
     public Restaurant findOne(Long restaurantId){
         return restaurantRepository.findOne(restaurantId);
     }
+
+    public List<Restaurant> findRestaurantsByCategoryId(int categoryId){
+        return restaurantRepository.findByCategory(Category.fromInteger(categoryId));
+    }
+
+    public List<Restaurant> findRestaurantsByCategoryIdAndAddress(int categoryId, Address address){
+        return restaurantRepository.
+                findByCategoryAddressOrderedByLikes(Category.fromInteger(categoryId), address);
+    }
 }

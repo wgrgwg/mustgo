@@ -16,8 +16,12 @@ public class Member {
 
     private String name;
 
-    private MemberRank rank;
+    private int age;
 
+    @Enumerated(value = EnumType.STRING)
+    private Gender gender;
+
+    @Embedded
     private Address address;
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)

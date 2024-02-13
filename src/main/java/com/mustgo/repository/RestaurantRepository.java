@@ -1,6 +1,8 @@
 package com.mustgo.repository;
 
 import ch.qos.logback.core.pattern.util.RestrictedEscapeUtil;
+import com.mustgo.domain.Address;
+import com.mustgo.domain.Category;
 import com.mustgo.domain.Restaurant;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
@@ -30,4 +32,20 @@ public class RestaurantRepository {
         return em.createQuery("select i from Restaurant i", Restaurant.class)
                 .getResultList();
     }
+
+    public List<Restaurant> findByCategory(Category category){
+        return em.createQuery("select i from Restaurant i where i.category = :category", Restaurant.class)
+                .getResultList();
+    }
+
+    public List<Restaurant> findByCategoryAddressOrderedByLikes(Category category, Address address) {
+        return em.createQuery("select i from Restaurant i where i.category = :category" +
+                        " and i.address.district = :address_district" +
+                        " order by i.likes desc", Restaurant.class)
+                .setParameter("category", category)
+                .setParameter("address_district", address.getDistrict())
+                .setMaxResults(5)
+                .getResultList();
+    }
+
 }

@@ -17,9 +17,13 @@ public class Restaurant {
 
     private String name;
 
-    private Category category; 
+    @Enumerated(value = EnumType.STRING)
+    private Category category;
+
     @Embedded
     private Address address;
+
+    private int likes;
 
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL)
     private List<Post> postList= new ArrayList<>();
