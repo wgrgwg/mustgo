@@ -29,6 +29,6 @@ public class Member {
 
 
     /**
-     * rank 관련 메소드 추가?
+     *
      */
 }

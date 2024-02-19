@@ -22,4 +22,12 @@ public class  RestaurantController {
         model.addAttribute("restaurants", restaurants);
         return "restaurants/restaurantsList";
     }
+
+//    @GetMapping("/restaurants/{categoryId}")
+//    public String list(@PathVariable("categoryId") int categoryId, Model model){
+//        List<Restaurant> restaurants = restaurantService.
+//                findRestaurantsByCategoryId(categoryId);
+//        model.addAttribute("restaurants", restaurants);
+//        return "restaurants/restaurantsList";
+//    }
 }

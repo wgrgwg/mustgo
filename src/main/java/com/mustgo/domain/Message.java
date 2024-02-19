@@ -7,11 +7,14 @@ import java.time.LocalDateTime;
 import java.time.Month;
 
 @Getter @Setter
-public class Order {
-    Member member;
+public class Message {
+    int age;
+    Gender gender;
     int currentSeason;
+    int isSpicy;
+    int isRice;
     int isDinner;
-    int orderFrequency;
+    int priceFavor;
 
     public void setCurrentSeason() {
         Month currentMonth = LocalDateTime.now().getMonth();
@@ -46,7 +49,13 @@ public class Order {
         LocalDateTime currentTime = LocalDateTime.now();
         int hour = currentTime.getHour();
 
-        this.isDinner =  hour >= 17 ? 1 : 0;
+        if (hour >=10 && hour < 17) {
+            this.isDinner = 0;  // 10:00 ~ 17:00 Lunch
+        } else if (hour >= 17 && hour < 22) {
+            this.isDinner = 1;  // Between 17:00 and 22:00 Dinner
+        } else {
+            this.isDinner = 2;  // After 22:00 night meal
+        }
     }
 }
 

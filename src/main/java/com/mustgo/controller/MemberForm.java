@@ -18,7 +18,11 @@ public class MemberForm {
     private String district;
     private String dong;
 
-    private int orderFrequency;
+    private int priceFavor;
+
+    private int isSpicy;
+
+    private int isRice;
 
     /**
      * 연령대 5단위

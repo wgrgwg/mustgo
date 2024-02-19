@@ -39,11 +39,19 @@ public class RestaurantRepository {
     }
 
     public List<Restaurant> findByCategoryAddressOrderedByLikes(Category category, Address address) {
+//        return em.createQuery("select i from Restaurant i where i.category = :category" +
+//                        " and i.address.district = :address_district" +
+//                        " order by i.likes desc", Restaurant.class)
+//                .setParameter("category", category)
+//                .setParameter("address_district", address.getDistrict())
+//                .setMaxResults(5)
+//                .getResultList();
         return em.createQuery("select i from Restaurant i where i.category = :category" +
                         " and i.address.district = :address_district" +
-                        " order by i.likes desc", Restaurant.class)
+                        " order by case when i.address.dong = :address_dong then 0 else 1 end, i.likes desc", Restaurant.class)
                 .setParameter("category", category)
                 .setParameter("address_district", address.getDistrict())
+                .setParameter("address_dong", address.getDong())
                 .setMaxResults(5)
                 .getResultList();
     }

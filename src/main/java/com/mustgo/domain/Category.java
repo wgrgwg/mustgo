@@ -7,7 +7,7 @@ public enum Category {
     public static Category fromInteger(int x) {
         switch(x) {
             case 0:
-                return GUKBAP; // 국밥
+                return SNACK; // 분식
             case 1:
                 return MALA; // 마라탕
             case 2:
@@ -27,7 +27,7 @@ public enum Category {
             case 9:
                 return KOR; // 한정식
             case 10:
-                return SNACK; // 분식
+                return GUKBAP; // 국밥
             case 11:
                 return CHICKEN; // 치킨
             case 12:

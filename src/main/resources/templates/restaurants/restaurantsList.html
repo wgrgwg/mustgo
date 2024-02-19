@@ -5,7 +5,7 @@
 <div class="container">
     <div th:replace="fragments/bodyHeader :: bodyHeader"/>
     <div>
-        <table class="table table-striped">
+        <table class="table table-striped" >
             <thead>
             <tr>
 <!--                <th>#</th>-->
@@ -14,6 +14,7 @@
                 <th>도시</th>
                 <th>구</th>
                 <th>동</th>
+                <th style="white-space: nowrap;">추천수</th>
                 <th></th>
             </tr>
             </thead>
@@ -22,9 +23,10 @@
 <!--                <td th:text="${restaurants.id}"></td>-->
                 <td th:text="${restaurants.name}"></td>
                 <td th:text="${restaurants.category.getDescription()}"></td>
-                <td th:text="${restaurants.address?.city}"></td>
-                <td th:text="${restaurants.address?.district}"></td>
+                <td style="white-space: nowrap;" th:text="${restaurants.address?.city}"></td>
+                <td style="white-space: nowrap;" th:text="${restaurants.address?.district}"></td>
                 <td th:text="${restaurants.address?.dong}"></td>
+                <td style="white-space: nowrap;" th:text="${restaurants.likes}"></td>
 <!--                <td>-->
 <!--                    <a href="#" th:href="@{/restaurants/{id}/posts (id=${restaurants.id})}"-->
 <!--                       class="btn btn-primary" role="button">리뷰 조회</a>-->

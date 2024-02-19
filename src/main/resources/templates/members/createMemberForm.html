@@ -23,7 +23,7 @@
         <div class="form-group">
             <label th:for="age">나이</label>
             <input type="number" th:field="*{age}" class="form-control"
-                   placeholder="나이를 입력하세요" min="1" value="20">
+                   placeholder="나이를 입력하세요" min="10" max="69">
         </div>
 
         <div class="form-group">
@@ -35,11 +35,28 @@
         </div>
 
         <div class="form-group">
-            <label th:for="orderFrequency">주문 빈도</label>
-            <select th:field="*{orderFrequency}" class="form-control">
-                <option value="0">주 0~2회</option>
-                <option value="1">주 3~5회</option>
-                <option value="2">주 6회 이상</option>
+            <label th:for="isSpicy">매운맛 선호</label>
+            <select th:field="*{isSpicy}" class="form-control">
+                <option value="0">비선호</option>
+                <option value="1">선호</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label th:for="isRice">밥 선호</label>
+            <select th:field="*{isRice}" class="form-control">
+                <option value="0">비선호</option>
+                <option value="1">상관없음</option>
+                <option value="2">선호</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label th:for="priceFavor">선호 가격대</label>
+            <select th:field="*{priceFavor}" class="form-control">
+                <option value="0">1만원</option>
+                <option value="1">3만원</option>
+                <option value="2">5만원 이상</option>
             </select>
         </div>
 
